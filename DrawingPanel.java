@@ -1,7 +1,9 @@
+package cmsc330_project1;
+
+//Tate Prodigalidad
+//07-08-2025
 // CMSC 330 Advanced Programming Languages
-// Project 1 Skeleton
-// UMGC CITE
-// August 2021
+// Project 1
 
 import java.awt.*;
 import java.util.*;
@@ -26,6 +28,4 @@ class DrawingPanel extends JPanel {
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         for (Image image : images)
-            image.draw(graphics);
-    }
-}
+      
