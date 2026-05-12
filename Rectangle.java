@@ -1,7 +1,9 @@
-// CMSC 330 Advanced Programming Languages
-// Project 1 Skeleton
-// UMGC CITE
-// August 2021
+package cmsc330_project1;
+
+//Tate Prodigalidad
+//07-08-2025
+//CMSC 330 Advanced Programming Languages
+//Project 1
 
 import java.awt.*;
 
