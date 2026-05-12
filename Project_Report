@@ -1,0 +1,120 @@
+Tate Prodigalidad 
+CMSC 330 Project 1 
+Project Report: Scene Definition and 
+Image Parsing in Java 
+
+
+
+a. Approach to the Project 
+The project involved extending a skeleton Java program to parse a scene definition file and 
+draw various graphical images based on the information contained in the file. The program 
+needed to handle several shapes, including Right Triangle, Rectangle, Isosceles Triangle, 
+Parallelogram, Regular Polygon, and Text. The assignment provided a skeleton program 
+that already had a basic framework set up. My task was to extend it to handle new shapes 
+and properly parse the scene definition file. I needed to update the Lexer to handle new 
+tokens such as Isosceles, Parallelogram, Text, and others. The Parser class was then 
+modified to interpret the tokens and create the appropriate shapes. I carefully handled 
+coordinate parsing and ensured that properties like height, width, and color were parsed 
+correctly. Each image type was handled individually in the parser with conditions based on 
+the tokens. I created new classes for each of the shapes, extending a base Image class. Text 
+was implemented by drawing a string on a specified location. RegularPolygon and 
+SolidPolygon required calculating the coordinates of vertices based on sides and radius. 
+Parallelogram and Isosceles Triangle were handled by calculating the coordinates based on 
+the given dimensions and offset. After implementing the code, I tested the parsing and 
+drawing functionality to ensure all new shapes were parsed correctly and displayed 
+properly. 
+
+
+b. Test Plan 
+Test Case 1: Right Triangle 
+Input: 
+Scene Polygons (500, 500) 
+RightTriangle Color (255, 0, 0) at (50, 30) Height 100 Width 300; 
+End. 
+Expected Output - A red right triangle with height 100 and width 300 should be displayed at 
+position (50, 30). 
+Actual Output - A red right triangle with the correct dimensions was drawn at the correct 
+position. 
+Test Case 2: Rectangle 
+Input: 
+Scene Polygons (500, 500) 
+Rectangle Color (0, 128, 255) at (100, 100) Height 200 Width 100; 
+End. 
+Expected Output - A blue rectangle with height 200 and width 100 should be drawn at 
+position (100, 100). 
+Actual Output - A blue rectangle with the correct dimensions was drawn at the correct 
+position. 
+Test Case 3: Isosceles Triangle 
+Input 
+Scene Polygons (500, 500) 
+Isosceles Color (255, 0, 0) at (120, 120) Height 100 Width 200; 
+End. 
+Expected Output - A red isosceles triangle with height 100 and width 200 should be 
+displayed at position (120, 120). 
+Actual Output - A red isosceles triangle with the correct dimensions was drawn at the 
+correct position. 
+Test Case 4: Parallelogram 
+Input 
+Scene Polygons (500, 500) 
+Parallelogram Color (0, 0, 255) at (340, 50) (440, 120) Offset 30; 
+End. 
+Expected Output - A blue parallelogram with the given coordinates and offset should be 
+drawn. 
+Actual Output - A blue parallelogram was correctly displayed with the calculated 
+coordinates and offset. 
+Test Case 5: Regular Polygon 
+Input: 
+Scene Polygons (500, 500) 
+RegularPolygon Color (255, 0, 255) at (300, 300) Sides 6 Radius 80; 
+End. 
+Expected Output - A purple regular polygon with 6 sides and radius 80 should be displayed 
+at position (300, 300). 
+Actual Output - A purple regular polygon with the correct number of sides and radius was 
+drawn at the correct position. 
+Test Case 6: Text 
+Input: 
+Scene Polygons (500, 500) 
+Text Color (0, 0, 0) at (400, 200) "Hello World"; 
+End. 
+Expected Output - A black text "Hello World" should be displayed at position (400, 200). 
+Actual Output - The text "Hello World" was correctly displayed at the specified location in 
+black color. 
+
+
+c. Lessons Learned and Improvements 
+1. Parsing Complex Scene Files 
+Handling the grammar for parsing complex scene definitions was tricky. Ensuring the 
+parser interpreted the different tokens correctly (especially the images' properties) took 
+careful handling of the Lexer and Parser logic. 
+2. Handling Token Types 
+The Lexer had to be carefully modified to account for new image types and attributes (e.g., 
+TEXT, HEIGHT, WIDTH). Managing the proper flow between different tokens and validating 
+them in the Parser was critical to prevent unexpected errors. 
+3. Object-Oriented Design 
+The design of the Image class and its subclasses (like RightTriangle, Rectangle, etc.) was 
+key to maintaining clear and extendable code. Using inheritance made it easier to manage 
+different types of images. 
+4. Debugging 
+Debugging issues like unexpected tokens was time-consuming. A clear understanding of 
+the grammar and debugging information from the token output helped a lot. 
+Improvements 
+1. Error Handling 
+The program could benefit from better error handling, particularly for invalid or missing 
+fields in the scene file. A more descriptive error message would help debug issues faster. 
+2. Modularization 
+The program can be further modularized. For instance, the Parser class could be split into 
+smaller classes to handle different image types, making the code more maintainable and 
+easier to extend. 
+3. Efficiency 
+The Lexer could be optimized for large scene files to handle more complex parsing tasks 
+more efficiently. 
+4. GUI Improvements 
+The current implementation is functional, but additional GUI features could be added, 
+such as interactive editing of the scene, zooming, and moving objects. 
+
+
+Conclusion 
+This project was a great learning experience in terms of parsing and interpreting scene 
+definitions in Java. It involved a combination of careful lexical analysis, object-oriented 
+design, and debugging techniques. By following a structured approach, I was able to extend 
+the program to handle additional image types and successfully parse complex scene files. 
